@@ -2,7 +2,6 @@
 @author Rocorral
 ID: 80416750
 Instructor: David Aguirre
-Section: TR 1030-1150
 Assignment:Lab 1-B - Recursion
 Last Modification: 09/13/2018
 Program Purpose: The purpose of this program is to practice recursive algorithm problem
@@ -43,7 +42,7 @@ def get_submission_comments(url):
     submission.comments.replace_more()
 
     return submission.comments
-#Begin My Code -----------------------------------------------------------------------
+#Begin My Code
 def process_comments(comments,c):
 	#base case returns after reaching maximum reply depth + 1.
 	if c==len(comments) or comments is None:
@@ -60,22 +59,35 @@ def process_comments(comments,c):
 	process_comments(comments,c+1)
 #sorting Def taking in scores and comment to be placed in appropriate list based on score
 def list_sorting(cmnt,pos_score,neut_score,neg_score):
+	#print(cmnt)
 	if pos_score > neut_score >neg_score:
 		positive_comments_list.append(cmnt)
-		#print("this comment was added to Pos  list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
+		print("this comment was added to Pos  list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
+		++posc
 	if neut_score > pos_score >neg_score:
 		neutral_comments_list.append(cmnt)
-		#print("this comment was added to Neut list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
+		print("this comment was added to Neut list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
+		++neutc
 	if neg_score > pos_score > neut_score:
 		negative_comments_list.append(cmnt)
-		#print("this comment was added to Neg  list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
+		print("this comment was added to Neg  list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
+		++negc
+
 
 
 positive_comments_list = []
 neutral_comments_list = []
 negative_comments_list = []
-#the following thread was chosen for the usual emotional charge in political conversation
-comments = get_submission_comments('https://www.reddit.com/r/Conservative/comments/9clfbn/the_horror/')
-process_comments(comments,0)
-
+# The following thread was chosen for the usual emotional charge in political conversation. personally
+# I think NLTK can miss context and calculate on good words vs bad. The clear majority of the comments got a neutral rating.
+# even some of the sarcastically unsavory ones.
+test1 = get_submission_comments('https://www.reddit.com/r/Conservative/comments/9clfbn/the_horror/')
+# The second test come from r/awww I wanted to get some positive comments tests as few of the comments in test one got a winning positive score... but oddly no negative
+test2 = get_submission_comments('https://www.reddit.com/r/aww/comments/9fjme3/for_my_birthday_i_give_you_one_of_the_sweetest/')
+# Test 3 uses a controversial thread with many comments and replies yet I only find 2 negatives. the only 2 negatives in 3 tests. 
+#Most threads are moderated for hate speech and vitriolic comments this may be the casue of my results
+test3 = get_submission_comments('https://www.reddit.com/r/politics/comments/9florm/ocasiocortez_slams_trumps_puerto_rico_comments_my/')
+process_comments(test1,0)
+process_comments(test2,0)
+process_comments(test3,0)
 

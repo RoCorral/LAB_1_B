@@ -2,6 +2,7 @@
 @author Rocorral
 ID: 80416750
 Instructor: David Aguirre
+Section: TR 1030-1150
 Assignment:Lab 1-B - Recursion
 Last Modification: 09/13/2018
 Program Purpose: The purpose of this program is to practice recursive algorithm problem

@@ -62,18 +62,14 @@ def list_sorting(cmnt,pos_score,neut_score,neg_score):
 	#print(cmnt)
 	if pos_score > neut_score >neg_score:
 		positive_comments_list.append(cmnt)
-		print("this comment was added to Pos  list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
-		++posc
+		#print("this comment was added to Pos  list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
 	if neut_score > pos_score >neg_score:
 		neutral_comments_list.append(cmnt)
-		print("this comment was added to Neut list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
-		++neutc
+		#print("this comment was added to Neut list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
 	if neg_score > pos_score > neut_score:
 		negative_comments_list.append(cmnt)
-		print("this comment was added to Neg  list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
-		++negc
-
-
+		#print("this comment was added to Neg  list with a Pos Score of",pos_score," a neg score of ",neg_score," and a neut_score of ",neut_score," -------->")
+		
 
 positive_comments_list = []
 neutral_comments_list = []

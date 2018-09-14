@@ -43,7 +43,7 @@ def get_submission_comments(url):
     submission.comments.replace_more()
 
     return submission.comments
-#Begin My Code
+#Begin My Code -----------------------------------------------------------------------
 def process_comments(comments,c):
 	#base case returns after reaching maximum reply depth + 1.
 	if c==len(comments) or comments is None:
